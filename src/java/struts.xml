@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+
+    <package name="basicstruts2" extends="struts-default,json-default">
+        <!--Inicio del módulo de gestión de usuarios -->
+        <action name="login"  class="com.utez.prueba.execution.login.ActionLogin" method="login">
+            <result name="Administrador" type="redirectAction">
+                <param name="actionName">redirectAdministrator</param>
+            </result>
+            <result name="error">/index.jsp</result>
+        </action>
+        
+        <action name="closeLogin"  class="com.utez.prueba.execution.login.ActionLogin" method="closeLogin">
+            <result name="success">/index.jsp</result>
+        </action>
+        
+        <action name="redirectAdministrator"  class="com.utez.prueba.execution.login.ActionLogin" method="redirectAdministrator">
+            <result name="success">/screen/homeAdministrator/home.jsp</result>
+        </action>
+         <!--fin de las acciones sesiones -->
+        
+        <!--Inicio del módulo de gestión de usuarios -->
+        <action name="findAll"  class="com.utez.prueba.administration.user.ActionUser" method="findAll">
+            <result type="json" />
+        </action>
+         <!--fin de gestión de usuarios -->
+        
+    </package>
+
+</struts>
