@@ -50,13 +50,14 @@ public class DaoLogin {
                     person.setSurname(rs.getString("surname"));
                     person.setSecondSurname(rs.getString("second_surname"));
                     person.setPhone(rs.getString("phone"));
+                    userLogged.setPerson(person);
                     userLogged.setMessage(rs.getString("message"));
-                    
-                }else{
+
+                } else {
                     userLogged.setMessage(rs.getString("message"));
                 }
             }
-            
+
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {

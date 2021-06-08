@@ -7,7 +7,7 @@
 
     <constant name="struts.devMode" value="true" />
 
-    <package name="basicstruts2" extends="struts-default,json-default">
+    <package name="basicstruts2" extends="struts-default,json-default" >
         <!--Inicio del módulo de gestión de usuarios -->
         <action name="login"  class="com.utez.prueba.execution.login.ActionLogin" method="login">
             <result name="Administrador" type="redirectAction">
@@ -21,7 +21,7 @@
         </action>
         
         <action name="redirectAdministrator"  class="com.utez.prueba.execution.login.ActionLogin" method="redirectAdministrator">
-            <result name="success">/screen/homeAdministrator/home.jsp</result>
+                <result name="success">/screen/homeAdministrator/home.jsp</result>
         </action>
          <!--fin de las acciones sesiones -->
         
